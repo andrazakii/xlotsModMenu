@@ -82,7 +82,7 @@ public class Menu {
 
     float MENU_CORNER = 4f;
     int ICON_SIZE = 45; //Change both width and height of image
-    float ICON_ALPHA = 0.7f; //Transparent
+    float ICON_ALPHA = 1f; //Transparent
     int ToggleON = Color.GREEN;
     int ToggleOFF = Color.RED;
     int BtnON = Color.parseColor("#1b5e20");
