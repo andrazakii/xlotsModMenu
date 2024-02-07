@@ -80,7 +80,7 @@ public class Menu {
     int POS_X = 0;
     int POS_Y = 100;
 
-    float MENU_CORNER = 4f;
+    float MENU_CORNER = 20f;
     int ICON_SIZE = 45; //Change both width and height of image
     float ICON_ALPHA = 1f; //Transparent
     int ToggleON = Color.GREEN;
@@ -137,13 +137,13 @@ public class Menu {
         mExpanded.setVisibility(View.GONE);
         mExpanded.setBackgroundColor(MENU_BG_COLOR);
         mExpanded.setOrientation(LinearLayout.VERTICAL);
-        // mExpanded.setPadding(1, 1, 1, 1); //So borders would be visible
+        mExpanded.setPadding(5, 5, 5, 5); //So borders would be visible
         mExpanded.setLayoutParams(new LinearLayout.LayoutParams(dp(MENU_WIDTH), WRAP_CONTENT));
         GradientDrawable gdMenuBody = new GradientDrawable();
         gdMenuBody.setCornerRadius(MENU_CORNER); //Set corner
         gdMenuBody.setColor(MENU_BG_COLOR); //Set background color
-        gdMenuBody.setStroke(1, Color.parseColor("#32cb00")); //Set border
-        //mExpanded.setBackground(gdMenuBody); //Apply GradientDrawable to it
+        gdMenuBody.setStroke(5, Color.parseColor("#32cb00")); //Set border
+        mExpanded.setBackground(gdMenuBody); //Apply GradientDrawable to it
 
         //********** The icon to open mod menu **********
         startimage = new ImageView(context);
@@ -183,33 +183,33 @@ public class Menu {
         wView.setOnTouchListener(onTouchListener());
 
         //********** Settings icon **********
-        TextView settings = new TextView(context); //Android 5 can't show ⚙, instead show other icon instead
-        settings.setText(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M ? "⚙" : "\uD83D\uDD27");
-        settings.setTextColor(TEXT_COLOR);
-        settings.setTypeface(Typeface.DEFAULT_BOLD);
-        settings.setTextSize(20.0f);
-        RelativeLayout.LayoutParams rlsettings = new RelativeLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT);
-        rlsettings.addRule(ALIGN_PARENT_RIGHT);
-        settings.setLayoutParams(rlsettings);
-        settings.setOnClickListener(new View.OnClickListener() {
-            boolean settingsOpen;
-
-            @Override
-            public void onClick(View v) {
-                try {
-                    settingsOpen = !settingsOpen;
-                    if (settingsOpen) {
-                        scrollView.removeView(mods);
-                        scrollView.addView(mSettings);
-                        scrollView.scrollTo(0, 0);
-                    } else {
-                        scrollView.removeView(mSettings);
-                        scrollView.addView(mods);
-                    }
-                } catch (IllegalStateException e) {
-                }
-            }
-        });
+//        TextView settings = new TextView(context); //Android 5 can't show ⚙, instead show other icon instead
+//        settings.setText(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M ? "⚙" : "\uD83D\uDD27");
+//        settings.setTextColor(TEXT_COLOR);
+//        settings.setTypeface(Typeface.DEFAULT_BOLD);
+//        settings.setTextSize(20.0f);
+//        RelativeLayout.LayoutParams rlsettings = new RelativeLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT);
+//        rlsettings.addRule(ALIGN_PARENT_RIGHT);
+//        settings.setLayoutParams(rlsettings);
+//        settings.setOnClickListener(new View.OnClickListener() {
+//            boolean settingsOpen;
+//
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    settingsOpen = !settingsOpen;
+//                    if (settingsOpen) {
+//                        scrollView.removeView(mods);
+//                        scrollView.addView(mSettings);
+//                        scrollView.scrollTo(0, 0);
+//                    } else {
+//                        scrollView.removeView(mSettings);
+//                        scrollView.addView(mods);
+//                    }
+//                } catch (IllegalStateException e) {
+//                }
+//            }
+//        });
 
         //********** Settings **********
         mSettings = new LinearLayout(context);
@@ -308,7 +308,7 @@ public class Menu {
             mCollapsed.addView(startimage);
         }
         titleText.addView(title);
-        titleText.addView(settings);
+//        titleText.addView(settings);
         mExpanded.addView(titleText);
         mExpanded.addView(subTitle);
         scrollView.addView(mods);
@@ -611,7 +611,7 @@ public class Menu {
     private void Button(LinearLayout linLayout, final int featNum, final String featName) {
         final Button button = new Button(getContext);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
-        layoutParams.setMargins(7, 5, 7, 5);
+        layoutParams.setMargins(25, 8, 25, 0);
         button.setLayoutParams(layoutParams);
         button.setTextColor(TEXT_COLOR_2);
         button.setAllCaps(false); //Disable caps to support html
