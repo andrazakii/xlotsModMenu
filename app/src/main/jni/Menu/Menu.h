@@ -48,6 +48,7 @@ jobjectArray SettingsList(JNIEnv *env, jobject activityObject) {
     const char *features[] = {
             OBFUSCATE("Category_Settings"),
             OBFUSCATE("-1_Toggle_Save feature preferences"), //-1 is checked on Preferences.java
+            OBFUSCATE("-3_Toggle_Auto size vertically"),
             OBFUSCATE("Category_Menu"),
             OBFUSCATE("-6_Button_<font color='red'>Close settings</font>"),
     };
