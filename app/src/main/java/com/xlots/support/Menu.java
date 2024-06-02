@@ -1,11 +1,10 @@
 //Please don't replace listeners with lambda!
 
-package com.android.support;
+package com.xlots.support;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -61,8 +60,6 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.widget.RelativeLayout.ALIGN_PARENT_LEFT;
 import static android.widget.RelativeLayout.ALIGN_PARENT_RIGHT;
-
-import org.xml.sax.ErrorHandler;
 
 public class Menu {
     //********** Here you can easly change the menu appearance **********//

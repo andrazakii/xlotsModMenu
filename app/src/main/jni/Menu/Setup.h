@@ -67,7 +67,7 @@ void startActivityPermisson(JNIEnv *env, jobject ctx){
 void startService(JNIEnv *env, jobject ctx){
     jclass native_context = env->GetObjectClass(ctx);
     jclass intentClass = env->FindClass(OBFUSCATE("android/content/Intent"));
-    jclass actionString = env->FindClass(OBFUSCATE("com/android/support/Launcher"));
+    jclass actionString = env->FindClass(OBFUSCATE("com/xlots/support/Launcher"));
     jmethodID newIntent = env->GetMethodID(intentClass, OBFUSCATE("<init>"), OBFUSCATE("(Landroid/content/Context;Ljava/lang/Class;)V"));
     jobject intent = env->NewObject(intentClass,newIntent,ctx,actionString);
     jmethodID startActivityMethodId = env->GetMethodID(native_context, OBFUSCATE("startService"), OBFUSCATE("(Landroid/content/Intent;)Landroid/content/ComponentName;"));

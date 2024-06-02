@@ -1,4 +1,4 @@
-package com.android.support;
+package com.xlots.support;
 
 import android.app.ActivityManager;
 import android.app.Service;

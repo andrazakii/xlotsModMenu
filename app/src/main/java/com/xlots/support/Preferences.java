@@ -1,4 +1,4 @@
-package com.android.support;
+package com.xlots.support;
 
 import android.annotation.TargetApi;
 import android.content.Context;
